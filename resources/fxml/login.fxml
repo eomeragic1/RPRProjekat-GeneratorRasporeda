@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@/css/design.css" />
+    </stylesheets>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="132.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="134.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="23.0" minHeight="23.0" prefHeight="23.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="23.0" minHeight="23.0" prefHeight="23.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="23.0" minHeight="23.0" prefHeight="23.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="269.0" text="Generator Rasporeda v1.0" GridPane.columnSpan="2" GridPane.valignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="266.0" text="Made by Ermin Omeragic" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label alignment="CENTER" contentDisplay="CENTER" text="RPR 2019/20" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Separator>
+      <Label text="Korisničko ime:" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Lozinka:" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="fldKorisnickoIme" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </PasswordField>
+      <GridPane prefHeight="44.0" prefWidth="132.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelGreska" alignment="CENTER" contentDisplay="CENTER" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Novi korisnik?" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnRegistracija" mnemonicParsing="false" onAction="#handleRegistracija" text="Registracija" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnPrijava" mnemonicParsing="false" onAction="#handlePrijava" text="Prijava" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="3.0" left="3.0" right="5.0" top="3.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
