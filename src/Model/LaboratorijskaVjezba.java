@@ -20,4 +20,7 @@ public class LaboratorijskaVjezba extends Cas {
         }
         return false;
     }
+    public LaboratorijskaVjezba(int id) {
+        super(id);
+    }
 }

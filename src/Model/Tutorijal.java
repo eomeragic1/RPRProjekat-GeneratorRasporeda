@@ -12,4 +12,7 @@ public class Tutorijal extends Cas {
             return true;
         return false;
     }
+    public Tutorijal (int id) {
+        super(id);
+    }
 }

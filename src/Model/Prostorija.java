@@ -1,6 +1,8 @@
 package Model;
 
 public class Prostorija {
+    private static int count = 0;
+    private int ID;
     private int kapacitet;
     private boolean daLiImaProjektor;
     private boolean daLiJeAmfiteatar;
@@ -15,6 +17,7 @@ public class Prostorija {
         this.daLiJeAmfiteatar=daLiJeAmfiteatar;
         this.daLiJeElektronickiLab=daLiJeElektronickiLab;
         this.daLiJeRacunarskiLab=daLiJeRacunarskiLab;
+        ID = count++;
     }
 
     public int getKapacitet() {
@@ -63,5 +66,9 @@ public class Prostorija {
 
     public void setDaLiJeElektronickiLab(boolean daLiJeElektronickiLab) {
         this.daLiJeElektronickiLab = daLiJeElektronickiLab;
+    }
+
+    public int getID() {
+        return ID;
     }
 }

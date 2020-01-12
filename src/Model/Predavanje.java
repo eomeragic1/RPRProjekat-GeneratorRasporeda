@@ -13,4 +13,8 @@ public class Predavanje extends Cas {
         return false;
     }
 
+    public Predavanje (int id) {
+        super(id);
+    }
+
 }
