@@ -9,7 +9,7 @@ public class LoginDAO {
     private static LoginDAO instance = null;
     private Connection conn;
 
-    private PreparedStatement upitKorisnik, upitDodajKorisnika,upitDajKorisnikID;
+    private PreparedStatement upitKorisnik, upitDodajKorisnika,upitDajKorisnikID, upitDajKorisnika;
     private LoginDAO() {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:GeneratorRasporeda.db");
@@ -31,6 +31,7 @@ public class LoginDAO {
         try {
             upitDodajKorisnika =conn.prepareStatement("INSERT INTO korisnici VALUES (?,?,?,?,?,?,?)");
             upitDajKorisnikID=conn.prepareStatement("SELECT MAX(id)+1 FROM korisnici");
+            upitDajKorisnika=conn.prepareStatement("SELECT lozinka, tip, ime, prezime, jmbg FROM korisnici WHERE korisnicko_ime=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -121,6 +122,17 @@ public class LoginDAO {
         catch (SQLException e) {
             e.printStackTrace();
             return 0;
+        }
+    }
+    public Korisnik dajKorisnika(String username) {
+        try {
+            upitDajKorisnika.setString(1,username);
+            ResultSet rs = upitDajKorisnika.executeQuery();
+            if (!rs.next()) return null;
+            return new Korisnik(rs.getString(3),rs.getString(4),rs.getString(5),username,rs.getString(1),rs.getInt(2));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
