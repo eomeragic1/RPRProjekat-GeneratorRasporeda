@@ -38,7 +38,7 @@ public class Hromosom {
         fitSkor = skorKvaliteta/(3.0 *mapaCasova.size());
     }
 
-    private int izracunajSkorGena(int casID, int terminID) {
+    public int izracunajSkorGena(int casID, int terminID) {
         int skorGena = 0;
         int prostorijaID = Podaci.prostorije[(terminID*Podaci.prostorije.length*Podaci.brojRadnihDanaUSedmici/termini.length)%Podaci.prostorije.length].getID();
         if (Podaci.dajCasPremaID(casID).daLiJeValidnaProstorija(Podaci.dajProstorijuPremaID(prostorijaID)))
@@ -51,7 +51,22 @@ public class Hromosom {
     }
 
     private boolean daLiJeSlobodnaGrupaStudenata(int terminID) {
-
+        GrupaStudenata grupaStudenata = Podaci.dajCasPremaID(termini[terminID]).getGrupaStudenata();
+        int brojCasovaGrupe = 0;
+        int k = terminID%Podaci.casovaPoDanu;
+        int danID = (terminID*Podaci.brojRadnihDanaUSedmici/duzinaHromosoma)%Podaci.brojRadnihDanaUSedmici;
+        k+=danID * (duzinaHromosoma/Podaci.brojRadnihDanaUSedmici);
+        int brojProstorija = Podaci.prostorije.length;
+        for (int i=0; i<brojProstorija; i++, k+=Podaci.casovaPoDanu) {
+            if (termini[k]==-1)
+                continue;
+            else if (Podaci.dajCasPremaID(termini[k]).getGrupaStudenata().equals(grupaStudenata)) {
+                brojCasovaGrupe++;
+            }
+        }
+        if (brojCasovaGrupe == 1)
+            return true;
+        return false;
     }
 
     private boolean daLiJeSlobodanProfesor(int terminID) {
@@ -72,6 +87,36 @@ public class Hromosom {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder("");
+        for (int termin : termini) {
+            str.append(termin + "");
+        }
+        Iterator it = mapaCasova.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry par = (Map.Entry) it.next();
+            int casID = (int) par.getKey();
+            int terminID = (int) par.getValue();
+            str.append(" | " + casID + " " + terminID + " | ");
+        }
+        return str.toString();
+    }
+
+    public int getGen(int terminID) { return termini[terminID]; }
+    public void setGen(int terminID, int casID) {
+        termini[terminID] = casID;
+        if (casID!=-1)
+            mapaCasova.put(casID,terminID);
+    }
+
+    public boolean daLiJeCasKreiran(int casID) {
+        return mapaCasova.containsKey(casID);
+    }
+    public int getTerminID(int casID) {
+        return mapaCasova.get(casID);
     }
 
 }
