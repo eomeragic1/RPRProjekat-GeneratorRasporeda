@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="69.0" minWidth="10.0" prefWidth="31.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="107.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="31.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Radni dani:" GridPane.columnIndex="1" GridPane.columnSpan="2">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Label>
+      <CheckBox mnemonicParsing="false" text="Ponedjeljak" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <CheckBox mnemonicParsing="false" text="Utorak" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <CheckBox mnemonicParsing="false" text="Srijeda" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <CheckBox mnemonicParsing="false" text="Četvrtak" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <CheckBox mnemonicParsing="false" text="Petak" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <CheckBox mnemonicParsing="false" text="Subota" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label text="Broj časova po danu:" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="8" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Separator>
+      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" GridPane.rowSpan="4">
+        <columns>
+          <TableColumn prefWidth="50.0" text="ID" />
+          <TableColumn prefWidth="150.0" text="Ime Prostorije" />
+            <TableColumn text="Kapacitet" />
+        </columns>
+      </TableView>
+      <Label prefHeight="17.0" prefWidth="99.0" text="Naziv prostorije:" GridPane.columnIndex="4" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="3.0" left="6.0" top="3.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField prefHeight="25.0" prefWidth="59.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></TextField>
+      <Label text="Kapacitet:" GridPane.columnIndex="4" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></TextField>
+      <Label text="Karakteristike:" GridPane.columnIndex="4" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
+         </GridPane.margin></Label>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <children>
+            <CheckBox mnemonicParsing="false" text="Amfiteatar">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox mnemonicParsing="false" text="Elektronicki Lab">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox mnemonicParsing="false" text="Racunarski Lab">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox mnemonicParsing="false" text="Posjeduje projektor">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin>
+            </CheckBox>
+         </children>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </VBox>
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" text="Dodaj Prostoriju" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" text="Obrisi sobu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP" />
+      <Button mnemonicParsing="false" text="Obrisi sve" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP" />
+      <Button defaultButton="true" mnemonicParsing="false" text="Sljedeci" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP" />
+   </children>
+</GridPane>

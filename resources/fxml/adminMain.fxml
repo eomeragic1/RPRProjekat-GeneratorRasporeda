@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Početna">
+      <content>
+        <GridPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <stylesheets>
+            <URL value="@/css/design.css" />
+          </stylesheets>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="124.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="159.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints maxWidth="164.0" minWidth="31.0" prefWidth="125.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="230.0" minHeight="30.0" prefHeight="207.0" valignment="TOP" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+            <Label text="Promjena admin lozinke: " GridPane.columnSpan="2">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </Label>
+            <Label text="Trenutna lozinka: " GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </Label>
+            <Label text="Nova lozinka: " GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </Label>
+            <Label text="Ponovite novu lozinku: " GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </Label>
+            <Label text="Uvoz podataka iz CVS file-a: " GridPane.columnSpan="2" GridPane.rowIndex="5">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+              </GridPane.margin>
+            </Label>
+            <PasswordField fx:id="fldAdminLozinka" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </PasswordField>
+            <PasswordField fx:id="fldAdminNovaLozinka" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </PasswordField>
+            <PasswordField fx:id="fldAdminNovaLozinkaRepeat" GridPane.columnIndex="2" GridPane.rowIndex="3">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </GridPane.margin>
+            </PasswordField>
+            <TextField fx:id="fldCVSFile" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+              </GridPane.margin>
+            </TextField>
+            <Button fx:id="btnCVSFile" prefHeight="25.0" prefWidth="73.0" text="Izaberi File" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+              <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+              </GridPane.margin>
+            </Button>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Separator>
+          </children>
+        </GridPane>
+      </content>
+    </Tab>
+    <Tab text="Resursi">
+      <content>
+        <StackPane fx:id="paneHolderResursi" prefHeight="350.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      </content>
+    </Tab>
+    <Tab text="Predmeti">
+      <content>
+        <StackPane fx:id="paneHolderPredmeti" prefHeight="350.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      </content>
+    </Tab>
+    <Tab text="Profesori">
+      <content>
+        <StackPane fx:id="paneHolderProfesori" prefHeight="350.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      </content>
+    </Tab>
+    <Tab text="Generator">
+      <content>
+        <StackPane fx:id="paneHolderGenerator" prefHeight="350.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
